@@ -10,7 +10,6 @@
 #include <stdio.h>
 
 /**** MAIN PROGRAM ****/
-
 int main() {
 
     int x, y;                        // x and y will be the values entered by the user

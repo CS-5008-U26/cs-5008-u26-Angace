@@ -1,3 +1,4 @@
+/* HW 1 - Task 2 */
 #include <stdio.h>
 int main()
 {

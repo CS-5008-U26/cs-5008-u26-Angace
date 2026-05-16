@@ -23,7 +23,7 @@ int main() {
 
     /*======================*/
     /* Ask for the third number */
-    printf("Enter the third number: ");     // prompt the user
+    printf("Enter the third number: ");     // prompt the user to enter the third number
     scanf("%d", &z);                // read a number from the console ("stdin")
     fgets(s,100,stdin);             // pause the console and still see it before it disappears
 

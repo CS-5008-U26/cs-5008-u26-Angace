@@ -17,4 +17,12 @@ int main() {
     fgets(s,100,stdin);     // pause the console and still see it before it disappears
 
     return 0;   // return 0 to the operating system to indicate that the program finished successfully
+
+    /*
+    Changes made:
+    1. Add proper comments to the program
+    2. Change scanf("%s", s) to scanf("%s", t)，s is to handle the console pause, so we want to read user input into t  
+    3. Add one more fgets(s,100,stdin) after printf to pause the console, so the window stay on the screen until hit Enter to make it go away
+    4. Add "return 0" at the end to indicate that the program finished successfully
+    */
 }

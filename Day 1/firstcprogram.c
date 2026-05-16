@@ -28,7 +28,7 @@ int main() {
 
     /* HW 1 - Task 3 */
     /* Ask for another number */
-    printf("Enter another number: ");     // prompt the user
+    printf("Enter another number: ");     // prompt the user to enter another number
     scanf("%d", &y);                // read a number from the console ("stdin")
     fgets(s,100,stdin);             // pause the console and still see it before it disappears
 

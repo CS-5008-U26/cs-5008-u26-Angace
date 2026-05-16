@@ -1,5 +1,4 @@
 /* HW 1 - Task 5 */
-
 /* Standard Libraries */
 #include <stdio.h>
 

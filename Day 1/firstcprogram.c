@@ -27,7 +27,7 @@ int main() {
        know something that is not entirely obvious by looking at the code.
     */
 
-    /* Taks 3 */
+    /* HW 1 - Task 3 */
     /* Ask for another number */
     printf("Enter another number: ");     // prompt the user
     scanf("%d", &y);                // read a number from the console ("stdin")

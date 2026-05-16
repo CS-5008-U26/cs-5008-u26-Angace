@@ -21,7 +21,7 @@ int main() {
     printf("The sum is %d\n", x + y);  // tell the user the sum of the two numbers
 
     /*======================*/
-    /* Ask the third number */
+    /* Ask for the third number */
     printf("Enter the third number: ");     // prompt the user
     scanf("%d", &z);                // read a number from the console ("stdin")
     fgets(s,100,stdin);             // pause the console and still see it before it disappears

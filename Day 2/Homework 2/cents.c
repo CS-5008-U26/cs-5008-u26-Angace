@@ -8,7 +8,7 @@
 #include <stdio.h>
 
 int main() {
-
+    
     // Variable to store the number of cents entered by the user
     int cents;  // integer variable to store the number of cents entered by the user
     printf("Enter an integer number of cents between 1 and 100: ");  // Prompt the user to enter an integer number of cents between 1 and 100

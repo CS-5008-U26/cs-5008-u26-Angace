@@ -18,7 +18,7 @@ int main () {
     scanf("%d", &radius); 
 
     // Calculate the area of the circle using the formula
-    int area = (int)(pi) * (radius * radius);
+    int area = (int)(pi * (radius * radius));
 
     // Print the area of the circle as an integer
     printf("For a circle of radius %d.0 the area is : %d\n", radius, area);  // Print the area of the circle with two decimal places

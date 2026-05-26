@@ -10,14 +10,15 @@
 #include <stdio.h>
 
 int main () {
-
+    char s[100]; // s is used to "pause" the console so it doesn't exit too quickly
+    
     // Variables to store user input and calculated paycheck
     double hourlyRate;  // floating-point variable to store the hourly rate entered by the user
     double hours;       // floating-point variable to store the number of hours entered by the user
     double paycheck;    // floating-point variable to store the calculated paycheck
     
-    // Infinite loop to continuously prompt the user for input until they enter a number less than or equal to 0
-    for (;;) {  // Infinite loop to continuously prompt the user for input until they enter a number less than or equal to 0
+    // Loop to continuously prompt the user for input until they enter a number less than or equal to 0
+    while (1) {  
         /* Ask user to input values*/
         printf("Enter an hourly rate: ");  // Prompt the user to enter the hourly rate
         scanf("%lf", &hourlyRate);  // Read the hourly rate entered by the user
@@ -44,4 +45,5 @@ int main () {
     }
     
     return 0;  // Return 0 to indicate that the program ended successfully
+    fgets(s,100,stdin); // pause the console and still see it before it disappears
 }

@@ -172,7 +172,7 @@ int main()
     sNode *head = NULL; // initialize the head to empty
 
     /* ==== Read file ===== */
-    FILE *inFile = fopen("/Users/angace/Desktop/cs-5008-u26-Angace/Resources/uscities.csv", "r"); 
+    FILE *inFile = fopen("../../Resources/uscities.csv", "r"); 
 
     // Check if the file was opened successfully, if not, print an error message and exit the program
     if (inFile == NULL){

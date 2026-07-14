@@ -1,0 +1,17 @@
+10-SECOND N VALUES
+
+                    RANDOM              SORTED          REVERSE
+                    random order data   data is sorted  data is sorted in reverse order
+
+
+BUBBLE SORT         115,000             100,000,000,000  110,000
+
+SELECTION SORT      170,000             160,000          165,000
+
+INSERTION SORT      165,000             100,000,000,000  115,000
+
+MERGE SORT          63,000,000          120,000,000      115,000,000
+
+QUICK SORT          100,000,000         115,000          140,000
+
+BST Sort(with free) 13,800,000          60,000           60,000

@@ -4,9 +4,9 @@ Project: Finding the Best Route - Comparing A* and Dijkstra’s Algorithm on a T
 Team: JSD Squad (Zhuo Wang, Yang Huang, Lei Tuo)
 
 ***********  Terminal Compile  ************
-Pleas copy command and replace file path:
+Please copy command and replace the file path:
 Step 1: ././Final\Project
-Step 2: clang main.c pqueue.c drawUI.c -0 pathfinder
+Step 2: clang main.c pqueue.c drawUI.c -o pathfinder
 Step 3: ./pathfinder
 
 ***********  Adjust Animation Speed ************

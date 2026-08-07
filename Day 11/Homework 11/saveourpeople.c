@@ -70,7 +70,8 @@ City *readCity(char *line) {
         field = strtok(NULL, ","); // get the next field
         fieldNumber++; // increment the field number
     }
-    return (city);
+    free(city); // free the allocated memory for city if not returned
+    return NULL; // return NULL if the city data was not found
 }
 
 /******  MAIN FUNCTION *******/
@@ -79,6 +80,7 @@ int main (){
 
     City cities[MAXCITY]; // initialize cities to MAXCITY
     char line[500];  // initialize line to upto 500
+    int numCities = 0; // initialize the number of cities read from the file
 
     /* ==== Read file ===== */
     FILE *inFile = fopen("../../Resources/uscities.csv", "r"); 
@@ -110,20 +112,24 @@ int main (){
 
         // call the function to read each city
         City *temp = readCity(line);
-        cities[cityCount] = *temp;
+        if (temp == NULL) {
+            continue; // skip this line and continue with the next
+        }
+        cities[numCities] = *temp; // copy the city data to the cities array
         free(temp);
+        numCities++; // increment the number of cities read
     }
     fclose(inFile); // close the file after reading
 
     /* ==== DP functions ===== */
     // define dynamic programming table
-    long long dp[MAXCITY+1][LIMIT+1]; 
+    long long dp[numCities+1][LIMIT+1]; 
 
     // define selected cities
-    int keep[MAXCITY+1][LIMIT+1];
+    int keep[numCities+1][LIMIT+1];
 
     // imitialize dp and keep to 0
-    for (int i = 0; i <= MAXCITY; i++) {
+    for (int i = 0; i <= numCities; i++) {
         for (int j = 0; j <= LIMIT; j++){
             dp[i][j] = 0;
             keep[i][j] = 0;
@@ -131,17 +137,20 @@ int main (){
     }
 
     /* Build DP table */
-    for (int i = 1; i <= MAXCITY; i++) {
+    for (int i = 1; i <= numCities; i++) {
         for (int capacity = 0; capacity <= LIMIT; capacity++)
         {
+            int cityLength = cities[i - 1].length; // get the length of the current city name
+
             // city name length should <= 200
-            if (cities[i - 1].length > capacity){
+            if ((cityLength < 0) || (cityLength > capacity)){
                 dp[i][capacity] = dp[i - 1][capacity];
+                keep[i][capacity] = 0;
             }
             else
             {
                 // pop if include this city = current city pop + max pop obtained from the prev city with remaining capacity. */
-                long long include = cities[i - 1].population + dp[i - 1][capacity - cities[i - 1].length]; 
+                long long include = (cities[i - 1].population) + (dp[i - 1][capacity - cityLength]); 
 
                 //  pop if exclude this city
                 long long exclude = dp[i - 1][capacity];
@@ -160,13 +169,13 @@ int main (){
     }
 
     /* Print answer */
-    printf("Maximum population saved: %lld\n\n", dp[MAXCITY][LIMIT]);
+    printf("Maximum population saved: %lld\n\n", dp[numCities][LIMIT]);
     
     // Print selected cities
     printf("Cities to rescue:\n");
 
     int nameLength = LIMIT;
-    for (int i = MAXCITY; i >= 1; i--) {
+    for (int i = numCities; i >= 1; i--) {
         if (keep[i][nameLength]) {
             printf("%s  %lld  %d\n", 
                 cities[i-1].city, 
